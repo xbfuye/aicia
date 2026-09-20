@@ -46,14 +46,6 @@
           <div class="meta-item"><span class="meta-label">限时</span><span class="meta-num" id="stat-limited">—</span><span class="meta-unit">项</span></div>
           <div class="meta-item"><span class="meta-label">更新</span><span class="meta-num mono" id="stat-updated">—</span></div>
         </div>
-
-        <aside class="criteria">
-          <h2 class="criteria-title">编辑方针</h2>
-          <p class="criteria-lede">只收录能直接调用以下前沿模型的平台。同系列更高版本自动收录，旧代际不入目。</p>
-          <ul class="criteria-list" id="featured-models">
-            <!-- FEATURED_MODELS -->
-          </ul>
-        </aside>
       </div>
     </section>
 
@@ -69,11 +61,13 @@
           <button type="button" data-type="大模型">大模型</button>
           <button type="button" data-type="工具">工具</button>
         </div>
-        <input type="search" id="searchInput" class="search-input" placeholder="搜索平台、模型、额度…" />
-        <select id="sortSelect" class="sort-select">
-          <option value="updated">按更新时间</option>
-          <option value="name">按名称 A-Z</option>
-        </select>
+        <div class="search-bar">
+          <input type="search" id="searchInput" class="search-input" placeholder="搜索平台、模型、额度…" />
+          <select id="sortSelect" class="sort-select">
+            <option value="updated">按更新时间</option>
+            <option value="name">按名称 A-Z</option>
+          </select>
+        </div>
         <div class="cards" id="cards">
           <!-- STATIC_CARDS -->
         </div>
@@ -99,6 +93,18 @@
         <h2>发现新额度？</h2>
         <p>填一张表，我们核实后整理入库。不需要账号。</p>
         <a class="cta" href="/submit.html">去投稿 →</a>
+      </div>
+    </section>
+    <!-- 编辑方针 -->
+    <section class="section about-section" id="about">
+      <div class="wrap about-grid">
+        <div class="about-left">
+          <h2 class="criteria-title">编辑方针</h2>
+          <p class="criteria-lede">只收录能直接调用以下前沿模型的平台。同系列更高版本自动收录，旧代际不入目。</p>
+        </div>
+        <ul class="criteria-list" id="featured-models">
+          <!-- FEATURED_MODELS -->
+        </ul>
       </div>
     </section>
   </main>

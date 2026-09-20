@@ -16,6 +16,7 @@ card_fields: &cf
   - { label: 注册奖励, name: signup, widget: text, required: false }
   - { label: 实际体验, name: effect, widget: text, required: true }
   - { label: 领取链接, name: link, widget: string, required: true }
+  - { label: 邀请码列表（留空则不用）, name: inviteCodes, widget: list, summary: "{{fields.code}}", field: { label: 邀请码, name: code, widget: string, required: true }, required: false }
   - { label: 限时截止, name: limited, widget: datetime, type: date, required: false }
   - { label: 更新日期, name: updated, widget: datetime, type: date, required: true }
   - { label: 色调, name: tone, widget: select, required: false, options: ["", yellow, green, orange] }

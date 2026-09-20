@@ -62,6 +62,22 @@
   if (searchInput) searchInput.addEventListener('input', applyFilters);
   if (sortSelect) sortSelect.addEventListener('change', applyFilters);
 
+  /* ---------- 邀请码按天轮换 ---------- */
+  function pickInviteCode() {
+    var dayNo = Math.floor(Date.now() / 86400000); // UTC 自然日
+    document.querySelectorAll('[data-invite-codes]').forEach(function (link) {
+      var codes;
+      try { codes = JSON.parse(link.dataset.inviteCodes); } catch (e) { return; }
+      if (!Array.isArray(codes) || !codes.length) return;
+      var code = codes[dayNo % codes.length];
+      var base = link.dataset.inviteBase || link.getAttribute('href') || '';
+      if (!code) return;
+      var sep = base.indexOf('?') > -1 ? '&' : '?';
+      link.setAttribute('href', base + sep + 'invite_code=' + encodeURIComponent(code));
+    });
+  }
+  pickInviteCode();
+
   /* ---------- 海报弹窗（事件委托） ---------- */
   document.addEventListener('click', function (e) {
     var trigger = e.target.closest('[data-poster]');

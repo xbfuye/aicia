@@ -114,6 +114,18 @@ svg { display: block; }
 .criteria-list li strong { font-family: var(--mono); font-weight: 600; }
 .criteria-list li span { color: var(--muted); font-size: 11px; }
 
+/* ---------- 底部编辑方针 ---------- */
+.about-section { background: var(--surface-warm); border-top: 1px solid var(--line); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  align-items: start;
+}
+.about-left .criteria-title { margin-bottom: 12px; }
+.about-left .criteria-lede { margin-bottom: 0; }
+.about-grid .criteria-list { grid-template-columns: repeat(2, 1fr); }
+
 /* ---------- Section ---------- */
 .section { padding: 48px 0; }
 .section-head {
@@ -137,6 +149,9 @@ svg { display: block; }
 }
 .filters button:hover { border-color: var(--teal); color: var(--teal-dark); }
 .filters button.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+.search-bar {
+  display: flex; gap: 10px; margin-bottom: 22px; align-items: center;
+}
 .search-input {
   flex: 1; min-width: 200px;
   border: 1px solid var(--line); border-radius: 999px;
@@ -278,6 +293,10 @@ svg { display: block; }
   .cards { grid-template-columns: 1fr; }
   .lead { padding: 40px 20px 30px; }
   .topnav nav a { margin-left: 14px; font-size: 14px; }
+  .about-grid { grid-template-columns: 1fr; gap: 20px; }
+  .about-grid .criteria-list { grid-template-columns: 1fr; }
+  .search-bar { flex-direction: column; }
+  .search-input { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

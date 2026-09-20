@@ -147,9 +147,13 @@ function renderCard(card) {
     : '';
 
   const destination = card.poster ? null : safeUrl(card.link);
+  // 邀请码轮换：如果有 inviteCodes，嵌入 data 属性，前端按天轮换
+  const inviteAttrs = card.inviteCodes && Array.isArray(card.inviteCodes) && card.inviteCodes.length
+    ? ` data-invite-base="${escapeHtml(destination || '')}" data-invite-codes='${escapeHtml(JSON.stringify(card.inviteCodes))}'`
+    : '';
   const action = card.poster
     ? `<button class="card-link" data-poster="${escapeHtml(card.poster)}">查看详情</button>`
-    : `<a class="card-link" href="${escapeHtml(destination)}" target="_blank" rel="noopener">查看详情</a>`;
+    : `<a class="card-link" href="${escapeHtml(destination)}" target="_blank" rel="noopener"${inviteAttrs}>查看详情</a>`;
 
   return `
     <article class="card${tone}" data-cat="${escapeHtml(cat)}">
