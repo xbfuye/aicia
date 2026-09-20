@@ -76,6 +76,7 @@ export async function onRequestPost(context) {
         'Authorization': `Bearer ${GITHUB_PAT}`,
         'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json',
+        'User-Agent': 'aicia-cms',
       },
       body: JSON.stringify({
         message: `feat: new submission - ${data.name}`,
