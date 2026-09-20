@@ -1,11 +1,16 @@
-name: "阶跃星辰 StepFun"
-type: "大模型"
-modality: "step-5-preview · step-3.7-flash · step-3.5-flash · step-router-v1 · 全模态（文本/图像/语音）"
+name: 阶跃星辰 StepFun
+type: 大模型
+modality: step-5-preview · step-3.7-flash · step-3.5-flash · step-router-v1 · 全模态（文本/图像/语音）
 rating: 4
-quota: "Step Plan 免费体验回归：注册即送 15 天，用完再送 15 天（合计约 1 个月）；每成功邀请 1 位好友再 +15 天，最高累计 90 天。免费档 Flash Mini 每月 400M Credits（4 亿积分），旗舰模型通用"
-effect: "阶跃星辰自研全模态平台，免费档可用 step-5-preview、step-3.7-flash、step-3.5-flash、step-router-v1 等模型，覆盖文本 / 视觉理解 / 图像编辑 / 语音（stepaudio-2.5 系列）。API 兼容 OpenAI 与 Claude 格式，改个 Base URL 就能接进 Cursor、Claude Code、Cherry Studio、NextChat 等工具。实测：step-3.7-flash 文本约 2s、视觉 OCR 正确；step-3.5-flash 约 1.3s 适合高频任务；step-5-preview 冷启动偏慢（约 30s+）。⚠️ 免费额度用尽直接返回 429，不会自动扣余额；step-router-v1 不支持图像输入"
-link: "https://platform.stepfun.com"
-updated: "2026-09-20"
-pin: 5
+quota: Step Plan 免费体验回归：注册即送 15 天，用完再送 15 天（合计约 1 个月）；每成功邀请 1 位好友再 +15 天，最高累计 90 天。免费档 Flash Mini 每月 400M Credits（4 亿积分），旗舰模型通用
+signup: ''
+effect: 阶跃星辰自研全模态平台，免费档可用 step-5-preview、step-3.7-flash、step-3.5-flash、step-router-v1 等模型，覆盖文本 / 视觉理解 / 图像编辑 / 语音（stepaudio-2.5 系列）。API 兼容 OpenAI 与 Claude 格式，改个 Base URL 就能接进 Cursor、Claude Code、Cherry Studio、NextChat 等工具。实测：step-3.7-flash 文本约 2s、视觉 OCR 正确；step-3.5-flash 约 1.3s 适合高频任务；step-5-preview 冷启动偏慢（约 30s+）。⚠️ 免费额度用尽直接返回 429，不会自动扣余额；step-router-v1 不支持图像输入
+link: https://platform.stepfun.com
+limited: ''
+updated: 2026-09-20
+tone: ''
+badge: ''
 alwaysShow: true
-status: pending
+pin: 5
+poster: ''
+status: approved
