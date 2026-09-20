@@ -112,9 +112,12 @@ function loadWatchout() {
 /* ---------- 过滤 + 排序 ---------- */
 function buildVisible(cards, watchout) {
   const watchoutNames = new Set(watchout.map(w => w.name));
+  const today = new Date().toISOString().slice(0, 10);
   let list = cards.filter(c => {
     if (c.status !== 'approved') return false;
     if (watchoutNames.has(c.name)) return false;
+    // 限时活动已过期：不在首页展示，数据保留在仓库里，CMS 里仍可见
+    if (c.limited && c.limited < today && !c.alwaysShow) return false;
     return c.alwaysShow || isFeatured(c);
   });
   // pin 排序
