@@ -6,6 +6,7 @@
   <meta name="robots" content="noindex, nofollow" />
   <title>投稿 · AI CIA</title>
   <link rel="stylesheet" href="/style.css" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
   <style>
     .submit-wrap { max-width: 640px; margin: 0 auto; padding: 48px 20px 80px; }
     .submit-wrap h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
@@ -100,6 +101,10 @@
       <div class="hint">不会公开，只用于我们核实后联系你。</div>
     </div>
 
+    <div class="form-group">
+      <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY" data-theme="light"></div>
+    </div>
+
     <button type="submit" class="submit-btn" id="submitBtn">提交投稿</button>
     <div class="form-result" id="formResult"></div>
   </form>
@@ -114,6 +119,7 @@ document.getElementById('submitForm').addEventListener('submit', async (e) => {
   btn.textContent = '提交中...';
 
   const data = Object.fromEntries(new FormData(e.target).entries());
+  data.turnstileToken = (window.turnstile && turnstile.getResponse()) || '';
 
   try {
     const res = await fetch('/api/submit', {

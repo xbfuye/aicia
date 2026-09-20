@@ -137,6 +137,14 @@ svg { display: block; }
 }
 .filters button:hover { border-color: var(--teal); color: var(--teal-dark); }
 .filters button.active { background: var(--teal); color: #fff; border-color: var(--teal); }
+.search-input {
+  flex: 1; min-width: 200px;
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); padding: 8px 18px;
+  font-size: 14px; font-family: inherit; color: var(--ink);
+}
+.search-input:focus { outline: none; border-color: var(--teal); }
+.search-input::placeholder { color: var(--muted); }
 
 /* ---------- 卡片网格 ---------- */
 .cards {

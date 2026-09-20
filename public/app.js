@@ -8,9 +8,22 @@
 (function () {
   'use strict';
 
-  /* ---------- 筛选 ---------- */
+  /* ---------- 筛选 + 搜索 ---------- */
   var filters = document.getElementById('filters');
   var cardsBox = document.getElementById('cards');
+  var searchInput = document.getElementById('searchInput');
+  var currentType = 'all';
+
+  function applyFilters() {
+    if (!cardsBox) return;
+    var q = (searchInput ? searchInput.value.trim().toLowerCase() : '');
+    cardsBox.querySelectorAll('.card').forEach(function (card) {
+      var typeOk = (currentType === 'all' || card.dataset.cat === currentType);
+      var text = card.textContent.toLowerCase();
+      var searchOk = !q || text.indexOf(q) > -1;
+      card.style.display = (typeOk && searchOk) ? '' : 'none';
+    });
+  }
 
   if (filters && cardsBox) {
     filters.addEventListener('click', function (e) {
@@ -19,12 +32,13 @@
       filters.querySelectorAll('button').forEach(function (b) {
         b.classList.toggle('active', b === btn);
       });
-      var type = btn.dataset.type;
-      cardsBox.querySelectorAll('.card').forEach(function (card) {
-        var show = (type === 'all' || card.dataset.cat === type);
-        card.style.display = show ? '' : 'none';
-      });
+      currentType = btn.dataset.type;
+      applyFilters();
     });
+  }
+
+  if (searchInput) {
+    searchInput.addEventListener('input', applyFilters);
   }
 
   /* ---------- 海报弹窗（事件委托） ---------- */

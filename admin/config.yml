@@ -6,7 +6,6 @@ backend:
 
 media_folder: "public/images"
 public_folder: "/images"
-publish_mode: editorial_workflow
 
 card_fields: &cf
   - { label: 平台名称, name: name, widget: string, required: true }

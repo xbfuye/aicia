@@ -58,6 +58,26 @@ export async function onRequestPost(context) {
     return json({ ok: false, error: '链接格式不正确' }, 400);
   }
 
+  // 验证 Turnstile
+  if (env.TURNSTILE_SECRET) {
+    if (!data.turnstileToken) {
+      return json({ ok: false, error: '请完成人机验证' }, 400);
+    }
+    try {
+      const cfRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `secret=${env.TURNSTILE_SECRET}&response=${data.turnstileToken}`,
+      });
+      const cfData = await cfRes.json();
+      if (!cfData.success) {
+        return json({ ok: false, error: '人机验证失败，请重试' }, 400);
+      }
+    } catch {
+      return json({ ok: false, error: '验证服务暂不可用，请稍后重试' }, 502);
+    }
+  }
+
   const { GITHUB_PAT, GITHUB_REPO } = env;
   if (!GITHUB_PAT || !GITHUB_REPO) {
     return json({ ok: false, error: '服务器未配置 GITHUB_PAT' }, 500);
