@@ -17,8 +17,8 @@ card_fields: &cf
   - { label: 注册奖励, name: signup, widget: text, required: false }
   - { label: 实际体验, name: effect, widget: text, required: true }
   - { label: 领取链接, name: link, widget: string, required: true }
-  - { label: 限时截止, name: limited, widget: date, required: false }
-  - { label: 更新日期, name: updated, widget: date, required: true }
+  - { label: 限时截止, name: limited, widget: datetime, type: date, required: false }
+  - { label: 更新日期, name: updated, widget: datetime, type: date, required: true }
   - { label: 色调, name: tone, widget: select, required: false, options: ["", yellow, green, orange] }
   - { label: 角标, name: badge, widget: string, required: false }
   - { label: 强制展示, name: alwaysShow, widget: boolean, default: false }
