@@ -185,7 +185,7 @@ function renderWatchout(item, i) {
 
 function renderFeaturedModels() {
   return FEATURED_MODELS
-    .map(m => `<li><strong>${escapeHtml(m.label)}</strong><span>${escapeHtml(m.note)}</span></li>`)
+    .map(m => `<li><span class="check">✓</span><div><strong>${escapeHtml(m.label)}</strong><span>${escapeHtml(m.note)}</span></div></li>`)
     .join('\n');
 }
 

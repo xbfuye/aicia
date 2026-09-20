@@ -34,21 +34,6 @@
   </header>
 
   <main>
-    <!-- 头版 -->
-    <section class="lead" id="top">
-      <div class="wrap lead-inner">
-        <h1>把还能免费领的<br><em>AI 额度</em>，列在一张纸上。</h1>
-        <p class="dek">每家大模型送多少、怎么领、实测好不好用——独立核实，不接暗广。</p>
-
-        <div class="meta-row" aria-label="本站数据">
-          <div class="meta-item"><span class="meta-label">在录</span><span class="meta-num" id="stat-models">—</span><span class="meta-unit">大模型</span></div>
-          <div class="meta-item"><span class="meta-label">在录</span><span class="meta-num" id="stat-tools">—</span><span class="meta-unit">工具</span></div>
-          <div class="meta-item"><span class="meta-label">限时</span><span class="meta-num" id="stat-limited">—</span><span class="meta-unit">项</span></div>
-          <div class="meta-item"><span class="meta-label">更新</span><span class="meta-num mono" id="stat-updated">—</span></div>
-        </div>
-      </div>
-    </section>
-
     <!-- 情报列表 -->
     <section class="section" id="list">
       <div class="wrap">
@@ -95,16 +80,33 @@
         <a class="cta" href="/submit.html">去投稿 →</a>
       </div>
     </section>
-    <!-- 编辑方针 -->
-    <section class="section about-section" id="about">
-      <div class="wrap about-grid">
-        <div class="about-left">
-          <h2 class="criteria-title">编辑方针</h2>
-          <p class="criteria-lede">只收录能直接调用以下前沿模型的平台。同系列更高版本自动收录，旧代际不入目。</p>
+    <!-- 底部介绍（参考 token-fbi 风格） -->
+    <section class="section intro-section" id="about">
+      <div class="wrap intro-grid">
+        <!-- 左栏 -->
+        <div class="intro-left">
+          <h2>把值得领取的<br><em>AI 额度</em>放在一处。</h2>
+          <p class="intro-dek">额度、模型、领取方式和实测判断，一次查清。</p>
+          <div class="intro-buttons">
+            <a class="cta" href="#list">查看情报</a>
+            <a class="btn-outline" href="/submit.html">提交一条新线索</a>
+          </div>
+          <div class="stats-cards">
+            <div class="stat-card"><span class="stat-label">大模型</span><span class="stat-num" id="stat-models">—</span></div>
+            <div class="stat-card"><span class="stat-label">工具</span><span class="stat-num" id="stat-tools">—</span></div>
+            <div class="stat-card"><span class="stat-label">限时活动</span><span class="stat-num" id="stat-limited">—</span></div>
+            <div class="stat-card"><span class="stat-label">最后更新</span><span class="stat-num stat-date" id="stat-updated">—</span></div>
+          </div>
         </div>
-        <ul class="criteria-list" id="featured-models">
-          <!-- FEATURED_MODELS -->
-        </ul>
+        <!-- 右栏：精选模型 -->
+        <div class="intro-right">
+          <h3 class="criteria-title">优先收录能直接调用<br>前沿模型的平台</h3>
+          <span class="badge-outline">精选门槛</span>
+          <ul class="featured-grid" id="featured-models">
+            <!-- FEATURED_MODELS -->
+          </ul>
+          <p class="intro-note">多模态与高价值聚合平台，也会持续核验收录。</p>
+        </div>
       </div>
     </section>
   </main>
