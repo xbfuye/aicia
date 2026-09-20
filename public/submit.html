@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>投稿 · AI CIA</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .submit-wrap { max-width: 640px; margin: 0 auto; padding: 48px 20px 80px; }
+    .submit-wrap h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+    .submit-desc { color: var(--muted); font-size: 15px; margin-bottom: 32px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+    .form-group label .req { color: var(--red); }
+    .form-group .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .form-group input, .form-group textarea, .form-group select {
+      width: 100%; padding: 10px 14px;
+      border: 1px solid var(--line-strong); border-radius: var(--radius-sm);
+      font-size: 15px; font-family: inherit; background: var(--surface);
+      color: var(--ink);
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      outline: none; border-color: var(--teal);
+    }
+    .form-group textarea { min-height: 80px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .submit-btn {
+      width: 100%; padding: 14px;
+      background: var(--teal); color: #fff;
+      border: 0; border-radius: var(--radius-sm);
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      margin-top: 8px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .submit-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(8,114,112,0.25); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; box-shadow: none; }
+    .form-result { margin-top: 20px; padding: 16px; border-radius: var(--radius-sm); display: none; }
+    .form-result.success { background: #d7eeee; color: var(--teal-dark); display: block; }
+    .form-result.error { background: #fde8e8; color: var(--red); display: block; }
+    .back-link { display: inline-block; margin-bottom: 24px; font-size: 14px; color: var(--muted); }
+    .back-link:hover { color: var(--teal-dark); }
+  </style>
+</head>
+<body>
+
+<div class="wrap">
+  <a href="/" class="back-link">← 返回首页</a>
+</div>
+
+<div class="submit-wrap">
+  <h1>投稿新情报</h1>
+  <p class="submit-desc">发现新的免费 AI 额度？填下面的表，我们核实后上线。不需要注册，不留邮箱。</p>
+
+  <form id="submitForm">
+    <div class="form-group">
+      <label>平台名称 <span class="req">*</span></label>
+      <input type="text" name="name" required placeholder="例如：WorkBuddy" />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>平台类型 <span class="req">*</span></label>
+        <select name="type" required>
+          <option value="">请选择</option>
+          <option value="大模型">大模型</option>
+          <option value="工具">工具</option>
+          <option value="项目">项目</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>是否限时</label>
+        <input type="date" name="limited" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>支持哪些模型 / 模态 <span class="req">*</span></label>
+      <input type="text" name="modality" required placeholder="例如：HY3 · DeepSeek-V4.1" />
+    </div>
+
+    <div class="form-group">
+      <label>免费额度说明 <span class="req">*</span></label>
+      <textarea name="quota" required placeholder="例如：每天 100 万 token，30 RPM"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>实际体验 / 推荐理由 <span class="req">*</span></label>
+      <textarea name="effect" required placeholder="一句话说说你觉得值不值得领"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>领取链接 <span class="req">*</span></label>
+      <input type="url" name="link" required placeholder="https://..." />
+    </div>
+
+    <div class="form-group">
+      <label>你的联系方式（选填）</label>
+      <input type="text" name="contact" placeholder="GitHub / 微信，仅审核时用" />
+      <div class="hint">不会公开，只用于我们核实后联系你。</div>
+    </div>
+
+    <button type="submit" class="submit-btn" id="submitBtn">提交投稿</button>
+    <div class="form-result" id="formResult"></div>
+  </form>
+</div>
+
+<script>
+document.getElementById('submitForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const result = document.getElementById('formResult');
+  btn.disabled = true;
+  btn.textContent = '提交中...';
+
+  const data = Object.fromEntries(new FormData(e.target).entries());
+
+  try {
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    const json = await res.json();
+    if (res.ok && json.ok) {
+      result.className = 'form-result success';
+      result.textContent = '已收到！我们会在 3 天内核实，采用后将上线。';
+      e.target.reset();
+    } else {
+      result.className = 'form-result error';
+      result.textContent = json.error || '提交失败，请稍后重试。';
+    }
+  } catch (err) {
+    result.className = 'form-result error';
+    result.textContent = '网络错误，请稍后重试。';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '提交投稿';
+  }
+});
+</script>
+
+</body>
+</html>
