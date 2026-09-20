@@ -73,7 +73,7 @@ export async function onRequestPost(context) {
     const res = await fetch(`https://api.github.com/repos/${GITHUB_REPO}/contents/${filepath}`, {
       method: 'PUT',
       headers: {
-        'Authorization': `token ${GITHUB_PAT}`,
+        'Authorization': `Bearer ${GITHUB_PAT}`,
         'Accept': 'application/vnd.github+json',
         'Content-Type': 'application/json',
       },
@@ -86,7 +86,7 @@ export async function onRequestPost(context) {
     if (!res.ok) {
       const err = await res.text();
       console.error('GitHub API error:', res.status, err);
-      return json({ ok: false, error: '写入仓库失败，请稍后重试' }, 502);
+      return json({ ok: false, error: `GitHub ${res.status}: ${err.slice(0, 200)}` }, 502);
     }
   } catch (err) {
     console.error('Fetch error:', err);
