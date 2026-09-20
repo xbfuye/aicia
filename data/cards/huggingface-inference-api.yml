@@ -6,4 +6,4 @@ quota: "免费共享推理端点，无需信用卡（限流，适合原型验证
 effect: "全球最大开源模型社区提供的免费推理 API，覆盖 DeepSeek-V4、Qwen3-235B、Mistral Large 3、Llama 等上千开源模型，无需绑卡即可用 OpenAI 兼容接口调用，适合个人开发与模型对比测试"
 link: "https://huggingface.co"
 updated: "2026-07-24"
-status: pending
+status: approved

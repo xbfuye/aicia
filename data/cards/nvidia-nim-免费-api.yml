@@ -6,4 +6,4 @@ quota: "标 Free Endpoint 的模型免费调用，提供 H100 算力（速率有
 effect: "可调 MiniMax M2.7、GLM-5.1、Kimi K2.5、DeepSeek V3.2、Gemma 4、Llama 4 等顶级模型，兼容 OpenAI SDK"
 link: "https://build.nvidia.com"
 updated: "2026-07-15"
-status: pending
+status: approved
