@@ -8,21 +8,43 @@
 (function () {
   'use strict';
 
-  /* ---------- 筛选 + 搜索 ---------- */
+  /* ---------- 筛选 + 搜索 + 排序 ---------- */
   var filters = document.getElementById('filters');
   var cardsBox = document.getElementById('cards');
   var searchInput = document.getElementById('searchInput');
+  var sortSelect = document.getElementById('sortSelect');
   var currentType = 'all';
 
   function applyFilters() {
     if (!cardsBox) return;
     var q = (searchInput ? searchInput.value.trim().toLowerCase() : '');
+    var sortBy = sortSelect ? sortSelect.value : 'updated';
+
+    var visible = [];
     cardsBox.querySelectorAll('.card').forEach(function (card) {
       var typeOk = (currentType === 'all' || card.dataset.cat === currentType);
       var text = card.textContent.toLowerCase();
       var searchOk = !q || text.indexOf(q) > -1;
-      card.style.display = (typeOk && searchOk) ? '' : 'none';
+      var show = typeOk && searchOk;
+      card.style.display = show ? '' : 'none';
+      if (show) visible.push(card);
     });
+
+    // 排序
+    visible.sort(function (a, b) {
+      if (sortBy === 'name') {
+        var na = a.querySelector('.name') ? a.querySelector('.name').textContent.trim() : '';
+        var nb = b.querySelector('.name') ? b.querySelector('.name').textContent.trim() : '';
+        return na.localeCompare(nb, 'zh');
+      }
+      // 默认按更新时间（DOM 原始顺序就是按时间排的，不重排）
+      return 0;
+    });
+
+    // 如果是按名称排序，重新插入 DOM
+    if (sortBy === 'name' && visible.length) {
+      visible.forEach(function (card) { cardsBox.appendChild(card); });
+    }
   }
 
   if (filters && cardsBox) {
@@ -37,9 +59,8 @@
     });
   }
 
-  if (searchInput) {
-    searchInput.addEventListener('input', applyFilters);
-  }
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+  if (sortSelect) sortSelect.addEventListener('change', applyFilters);
 
   /* ---------- 海报弹窗（事件委托） ---------- */
   document.addEventListener('click', function (e) {

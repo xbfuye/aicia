@@ -100,6 +100,9 @@ function loadCards() {
       }
     }
     card.__file = file;
+    // 日期字段统一转字符串（CMS 可能存成 Date 对象）
+    if (card.updated) card.updated = String(card.updated).slice(0, 10);
+    if (card.limited) card.limited = String(card.limited).slice(0, 10);
     cards.push(card);
   }
   return cards;
@@ -118,7 +121,7 @@ function buildVisible(cards, watchout) {
     if (watchoutNames.has(c.name)) return false;
     // 限时活动已过期：不在首页展示，数据保留在仓库里，CMS 里仍可见
     if (c.limited && c.limited < today && !c.alwaysShow) return false;
-    return c.alwaysShow || isFeatured(c);
+    return true; // CMS 已批准的全部显示
   });
   // pin 排序
   list = list.slice().sort((a, b) => (a.updated < b.updated ? 1 : -1));

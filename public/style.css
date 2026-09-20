@@ -145,6 +145,13 @@ svg { display: block; }
 }
 .search-input:focus { outline: none; border-color: var(--teal); }
 .search-input::placeholder { color: var(--muted); }
+.sort-select {
+  border: 1px solid var(--line); border-radius: 999px;
+  background: var(--surface); padding: 8px 14px;
+  font-size: 14px; font-family: inherit; color: var(--ink);
+  cursor: pointer;
+}
+.sort-select:focus { outline: none; border-color: var(--teal); }
 
 /* ---------- 卡片网格 ---------- */
 .cards {

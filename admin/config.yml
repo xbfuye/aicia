@@ -34,6 +34,8 @@ collections:
     extension: yml
     format: yml
     filter: { field: status, value: pending }
+    sortable: true
+    sortable_fields: [updated, name]
     fields: *cf
 
   - name: approved
@@ -44,6 +46,8 @@ collections:
     extension: yml
     format: yml
     filter: { field: status, value: approved }
+    sortable: true
+    sortable_fields: [updated, name, rating]
     fields: *cf
 
   - name: watchout
