@@ -31,7 +31,7 @@ collections:
     label: 待审核投稿
     folder: data/cards
     create: false
-    delete: true
+    delete: false
     extension: yml
     format: yml
     filter: { field: status, value: pending }
@@ -43,12 +43,24 @@ collections:
     label: 已上线卡片
     folder: data/cards
     create: true
-    delete: true
+    delete: false
     extension: yml
     format: yml
     filter: { field: status, value: approved }
     sortable: true
     sortable_fields: [updated, name, rating]
+    fields: *cf
+
+  - name: rejected
+    label: 回收站
+    folder: data/cards
+    create: false
+    delete: true
+    extension: yml
+    format: yml
+    filter: { field: status, value: rejected }
+    sortable: true
+    sortable_fields: [updated, name]
     fields: *cf
 
   - name: watchout
