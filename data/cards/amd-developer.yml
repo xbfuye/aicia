@@ -1,0 +1,11 @@
+name: AMD 免费 API 与开发者计划
+type: 大模型
+modality: "AMD 免费 API · 裸机 Instinct GPU / Fireworks 托管推理 · 开发者福利"
+rating: 5
+quota: "免费 API 入口：developer.amd.com.cn/radeon/tokenfactory；AMD AI 开发者计划另给最高 $100 免费云额度（裸机 AMD Instinct GPU）、$50 Fireworks AI 额度（托管 LLM 推理）、1 个月 deeplearning.ai 私享 Discord 权限，以及活动/GPU+AI PC 抽奖资格"
+effect: "AMD 免费 API 速度快，比英伟达免费的好用很多。开发者计划申请步骤：① 打开 studentoffers.co/offer/amd-ai-developer-program ② 加入 AMD AI 开发者计划 ③ 打开 Member Perks ④ 申请 AMD Cloud 或 Fireworks 额度 ⑤ 填写 affiliation / intended use / 公开主页 ⑥ 等待 2-3 个工作日审批。AMD 云额度激活后 30 天过期；Fireworks 额度 90 天有效；额度审批通过后可用"
+link: "https://developer.amd.com.cn/radeon/tokenfactory"
+tone: green
+alwaysShow: true
+updated: "2026-09-02"
+status: approved

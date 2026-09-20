@@ -1,0 +1,10 @@
+name: 美团 catpaw（App）
+type: 工具
+modality: "GLM-5.3-Flash · LongCat 等 · 多模型聚合"
+rating: 5
+tone: green
+quota: "新用户登录即送 1200 积分；LongCat 免费不限量；GLM-5.3-Flash 已上线（通用 Agent 能力 × 美团生态深度融合）"
+effect: "美团旗下 AI App，多模型聚合平台。GLM-5.3-Flash 正式上线 CatPaw！原生多模态、300B 参数比肩 Opus 4.8、定价仅 GLM-5.3 的 1/10。LongCat 同样免费不限量使用；界面类 WorkBuddy / Codex，对话 + 编程场景全覆盖"
+link: "https://catpaw.meituan.com/"
+updated: "2026-08-28"
+status: approved

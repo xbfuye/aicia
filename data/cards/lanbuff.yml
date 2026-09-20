@@ -1,0 +1,11 @@
+name: 蓝博科技（lanbuff）
+type: 工具
+modality: "DeepSeek V4 / GLM-5.3 / 千问 3.8 等主流模型中转"
+rating: 4
+quota: "老牌大模型中转站：聚合 DeepSeek V4、GLM-5.3、千问 3.8 等主流模型，整体价格比较实惠"
+effect: "长期稳定运营，调用成功率较高；一个账号打通多家厂商模型，兼容 OpenAI 接口，省去逐家注册与充值的麻烦"
+link: "https://lanbuff.app"
+pin: 4
+alwaysShow: true
+updated: "2026-09-17"
+status: approved

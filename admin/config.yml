@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: xbfuye/aicia
+  branch: main
+  base_url: https://aicia-oauth.example.workers.dev
+
+media_folder: "public/images"
+public_folder: "/images"
+publish_mode: editorial_workflow
+
+card_fields: &cf
+  - { label: 平台名称, name: name, widget: string, required: true }
+  - { label: 类型, name: type, widget: select, required: true, options: [大模型, 工具, 项目] }
+  - { label: 支持模型, name: modality, widget: string, required: true }
+  - { label: 星级, name: rating, widget: number, min: 1, max: 5, value: 3, required: true }
+  - { label: 免费额度, name: quota, widget: text, required: true }
+  - { label: 注册奖励, name: signup, widget: text, required: false }
+  - { label: 实际体验, name: effect, widget: text, required: true }
+  - { label: 领取链接, name: link, widget: string, required: true }
+  - { label: 限时截止, name: limited, widget: date, required: false }
+  - { label: 更新日期, name: updated, widget: date, required: true }
+  - { label: 色调, name: tone, widget: select, required: false, options: ["", yellow, green, orange] }
+  - { label: 角标, name: badge, widget: string, required: false }
+  - { label: 强制展示, name: alwaysShow, widget: boolean, default: false }
+  - { label: 固定位次, name: pin, widget: number, required: false, min: 1 }
+  - { label: 海报文件, name: poster, widget: string, required: false }
+  - { label: 状态, name: status, widget: select, required: true, options: [pending, approved, rejected] }
+
+collections:
+  - name: pending
+    label: 待审核投稿
+    folder: data/cards
+    create: false
+    delete: true
+    extension: yml
+    format: yml
+    filter: { field: status, value: pending }
+    fields: *cf
+
+  - name: approved
+    label: 已上线卡片
+    folder: data/cards
+    create: true
+    delete: true
+    extension: yml
+    format: yml
+    filter: { field: status, value: approved }
+    fields: *cf
+
+  - name: watchout
+    label: 观望名单
+    files:
+      - name: watchout
+        label: 观望名单
+        file: data/watchout.yml
+        fields:
+          - name: watchout
+            label: 观望条目
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { label: 平台名, name: name, widget: string, required: true }
+              - { label: 观望原因, name: why, widget: text, required: true }
+              - { label: 链接, name: link, widget: string, required: true }

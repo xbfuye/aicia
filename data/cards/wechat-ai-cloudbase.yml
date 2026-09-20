@@ -1,0 +1,10 @@
+name: 微信 AI 小程序成长计划（云开发 CloudBase）
+type: 大模型
+modality: "Hy3 + Hy Image 3.0 · 文本/生图"
+rating: 3
+quota: "10 亿大模型 Token + 10 万张 AI 生图（本轮加码后额度，自申请起 6 个月有效），另送 6 个月个人版云开发环境"
+effect: "腾讯云开发 CloudBase 联合微信小程序的开发者扶持计划，模型已全面升级为混元 Hy3 与 Hy Image 3.0；全行业无类目限制，小游戏开发者同享。10 亿 Token 足够把 AI 能力用厚在产品里，老用户自动升级或领 120 元代金券"
+link: "https://cloud.tencent.com/developer/article/2705075"
+limited: "2026-12-31"
+updated: "2026-07-29"
+status: approved

@@ -1,0 +1,13 @@
+{
+  "name": "aicia",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI CIA - 免费 AI Token 情报站",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "check": "node scripts/validate-cards.mjs && node scripts/build-site.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

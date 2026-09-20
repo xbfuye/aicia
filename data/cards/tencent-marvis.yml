@@ -1,0 +1,9 @@
+name: 腾讯 Marvis（马维斯）
+type: 工具
+modality: "混元 / DeepSeek V4 · 操作系统级 AI 助手"
+rating: 4
+quota: "每人每天 1000 万免费 Token（当前完全免费，无需邀请码，长期免费不现实但现免费用）"
+effect: "腾讯操作系统级 AI 助手，一句话调度 6 个 Agent 并行干文件/系统/应用/网页/搜索任务；效率模式用混元 + DeepSeek V4 云端模型，隐私模式走本地 Qwen 端侧模型，数据不出域，支持 Win/Mac/安卓/iOS 跨端操控"
+link: "https://marvis.qq.com"
+updated: "2026-07-24"
+status: approved
