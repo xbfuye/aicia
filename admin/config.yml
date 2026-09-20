@@ -8,6 +8,7 @@ media_folder: "public/images"
 public_folder: "/images"
 
 card_fields: &cf
+  - { label: 状态, name: status, widget: select, required: true, options: [pending, approved, rejected] }
   - { label: 平台名称, name: name, widget: string, required: true }
   - { label: 类型, name: type, widget: select, required: true, options: [大模型, 工具, 项目] }
   - { label: 支持模型, name: modality, widget: string, required: true }
@@ -24,7 +25,6 @@ card_fields: &cf
   - { label: 强制展示, name: alwaysShow, widget: boolean, default: false }
   - { label: 固定位次, name: pin, widget: number, required: false, min: 1 }
   - { label: 海报文件, name: poster, widget: string, required: false }
-  - { label: 状态, name: status, widget: select, required: true, options: [pending, approved, rejected] }
 
 collections:
   - name: pending
