@@ -135,8 +135,12 @@ svg { display: block; }
 .section-head h2 { font-size: 22px; font-weight: 800; }
 .section-note { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-/* ---------- 筛选 ---------- */
-.filters { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; }
+/* ---------- 工具栏（筛选+搜索+排序） ---------- */
+.toolbar {
+  display: flex; gap: 10px; margin-bottom: 22px;
+  align-items: center; flex-wrap: wrap;
+}
+.filters { display: flex; gap: 8px; flex-shrink: 0; }
 .filters button {
   appearance: none; cursor: pointer;
   border: 1px solid var(--line);
@@ -149,14 +153,12 @@ svg { display: block; }
 }
 .filters button:hover { border-color: var(--teal); color: var(--teal-dark); }
 .filters button.active { background: var(--teal); color: #fff; border-color: var(--teal); }
-.search-bar {
-  display: flex; gap: 10px; margin-bottom: 22px; align-items: center;
-}
 .search-input {
-  flex: 1; min-width: 200px;
+  flex: 0 1 320px; min-width: 180px;
   border: 1px solid var(--line); border-radius: 999px;
   background: var(--surface); padding: 8px 18px;
   font-size: 14px; font-family: inherit; color: var(--ink);
+  margin-left: auto;
 }
 .search-input:focus { outline: none; border-color: var(--teal); }
 .search-input::placeholder { color: var(--muted); }
@@ -295,8 +297,9 @@ svg { display: block; }
   .topnav nav a { margin-left: 14px; font-size: 14px; }
   .about-grid { grid-template-columns: 1fr; gap: 20px; }
   .about-grid .criteria-list { grid-template-columns: 1fr; }
-  .search-bar { flex-direction: column; }
-  .search-input { width: 100%; }
+  .toolbar { flex-direction: column; align-items: stretch; }
+  .search-input { margin-left: 0; flex: 1; width: 100%; }
+  .sort-select { width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

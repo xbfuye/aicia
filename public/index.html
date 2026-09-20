@@ -56,12 +56,12 @@
           <h2>情报列表</h2>
           <span class="section-note" id="list-total">—</span>
         </div>
-        <div class="filters" id="filters" role="group" aria-label="按类别筛选">
-          <button type="button" data-type="all" class="active">全部</button>
-          <button type="button" data-type="大模型">大模型</button>
-          <button type="button" data-type="工具">工具</button>
-        </div>
-        <div class="search-bar">
+        <div class="toolbar" id="filters">
+          <div class="filters">
+            <button type="button" data-type="all" class="active">全部</button>
+            <button type="button" data-type="大模型">大模型</button>
+            <button type="button" data-type="工具">工具</button>
+          </div>
           <input type="search" id="searchInput" class="search-input" placeholder="搜索平台、模型、额度…" />
           <select id="sortSelect" class="sort-select">
             <option value="updated">按更新时间</option>
