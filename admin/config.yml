@@ -2,7 +2,7 @@ backend:
   name: github
   repo: xbfuye/aicia
   branch: main
-  base_url: https://aicia-oauth.example.workers.dev
+  base_url: https://aicia-oauth.zczyabc.workers.dev
 
 media_folder: "public/images"
 public_folder: "/images"
