@@ -1,0 +1,9 @@
+name: "B.AI（AI 模型聚合平台）"
+type: "大模型"
+modality: "GLM-5.3-Flash / Qwen3.8-Flash / Hy3 / MiMo-V2.5 · 多模型一折"
+rating: 4
+quota: "免费模型已全部取消，现按原价 1 折计费：GLM-5.3-Flash、Qwen3.8-Flash、Hy3、MiMo-V2.5 等多款模型均为一折付费，平台已无任何完全免费的模型"
+effect: "孙哥（孙宇晨 Justin Sun）的 AI 模型聚合平台 b.ai（⚠️ 不是百度官方），聚合接入 OpenAI / Anthropic / Google / DeepSeek / 月之暗面 / 千问 / Z.ai / MiniMax 等第三方模型，走 LLM 聚合 + Web3 钱包支付路线；⚠️ 2026-09 起不再有 0 Credits 免费模型，全部改为一折计费，性价比优势明显减弱，入手前请先核算实际价格"
+link: "https://chat.b.ai/chat?invite_code=CQLBPC"
+updated: "2026-09-17"
+status: pending

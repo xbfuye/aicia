@@ -1,0 +1,9 @@
+name: "HuggingFace Inference API"
+type: "大模型"
+modality: "DeepSeek V4 / Qwen3 / Mistral 等 · 开源模型"
+rating: 2
+quota: "免费共享推理端点，无需信用卡（限流，适合原型验证；PRO $9/月或自部署解锁更高额度）"
+effect: "全球最大开源模型社区提供的免费推理 API，覆盖 DeepSeek-V4、Qwen3-235B、Mistral Large 3、Llama 等上千开源模型，无需绑卡即可用 OpenAI 兼容接口调用，适合个人开发与模型对比测试"
+link: "https://huggingface.co"
+updated: "2026-07-24"
+status: pending

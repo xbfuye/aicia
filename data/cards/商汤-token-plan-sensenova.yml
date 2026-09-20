@@ -1,0 +1,9 @@
+name: "商汤 Token Plan（sensenova）"
+type: "大模型"
+modality: "SenseNova 6.7 Flash-Lite / U1 Fast / DeepSeek V4 Flash · 日日新系列 · 文本模型"
+rating: 3
+quota: "限时免费公测：每个模型每 5 小时 1500 次调用（首月免费体验，按次数计非 Token）"
+effect: "限免额度已从 500 次/5h 加码到 1500 次/5h，且新增 SenseNova 6.7 Flash-Lite、SenseNova U1 Fast 等自研模型可选；DeepSeek V4 Flash 依旧在列，适合跑 Agent、图表分析、办公自动化和多模态任务。⚠️ 注意：日日新系列近期模型错误频发（报错率高），白天不建议使用，晚间相对稳定，介意的话避开白天高峰"
+link: "https://www.sensenova.cn/token-plan"
+updated: "2026-08-07"
+status: pending

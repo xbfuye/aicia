@@ -1,0 +1,9 @@
+name: "Agnes AI"
+type: "大模型"
+modality: "全模态模型"
+rating: 5
+quota: "不限期全模态免费，API 每分钟 20 次请求（RPM 20 以内）"
+effect: "Agnes2.0 全模态模型，文本 / 图像 / 视频全能适配，官方承诺持续升级并保持免费；多模态调用建议配合官方社区 skill（github.com/lj1270998580-crypto/Agnes-help-skill）"
+link: "https://platform.agnes-ai.com"
+updated: "2026-08-03"
+status: pending

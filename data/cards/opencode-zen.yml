@@ -1,0 +1,9 @@
+name: "OpenCode Zen"
+type: "工具"
+modality: "DeepSeek V4 Flash Free / MiMo-V2.5 Free / Nemotron 3 Ultra Free / Big Pickle 等"
+rating: 2
+quota: "多个精选模型限时免费（DeepSeek V4 Flash Free、MiMo-V2.5 Free、North Mini Code Free、Nemotron 3 Ultra Free、Big Pickle），无需付费；余额低于 $5 才自动充值"
+effect: "OpenCode（16 万+ Star 开源编程 Agent）自带的 Zen 模型网关，专为 coding agent 基准测试挑选并验证的模型，OpenAI 兼容接口，可配到任意编程客户端"
+link: "https://opencode.ai/zen"
+updated: "2026-07-23"
+status: pending

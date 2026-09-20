@@ -1,0 +1,9 @@
+name: "魔搭社区 ModelScope"
+type: "大模型"
+modality: "Qwen 系列 / LUX / Stable Diffusion 等 · 文本+多模态"
+rating: 1
+quota: "已切换『魔豆』计费体系，每日免费调用次数较此前明显下调（原每天 2000 次 RPD 缩水）；注册即享、无需实名即可注册，但需留意额度变动"
+effect: "阿里达摩院开源社区，收录 17 万+ 开源模型，生态完整、国内访问稳定；API-Inference 支持文本/图像等多模态，适合原型验证与模型体验。⚠️ 2026-08 起改采『魔豆』计费，免费调用次数较此前明显减少"
+link: "https://modelscope.cn"
+updated: "2026-08-07"
+status: pending

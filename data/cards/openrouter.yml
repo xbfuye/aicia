@@ -1,0 +1,9 @@
+name: "OpenRouter"
+type: "大模型"
+modality: "35+ 聚合模型（Kimi K2 / Qwen3-Next-80B / Llama 等）"
+rating: 3
+quota: "注册即享永久免费模型（BYOK 用户每月 100 万次请求）；免费模型每日 50 次（充值 $10 后升至 1000 次/日）"
+effect: "一站式聚合 500+ 模型（GPT/Claude/Gemini/Kimi/DeepSeek 等），OpenAI 兼容接口，一个 Key 切所有模型。⚠️ 实测反馈：GLM-5.2(free) 当前报 429 错误用不了（限流/上游不可用），免费模型可用性不稳定"
+link: "https://openrouter.ai"
+updated: "2026-08-19"
+status: pending

@@ -1,0 +1,9 @@
+name: "天翼云息壤（电信）"
+type: "大模型"
+modality: "GLM-5 · DeepSeek V4 · Qwen3.5 · Doubao 等约 18 个主流模型"
+rating: 2
+quota: "文本类模型 2500 万 Tokens/模型（有效期 2 周，从首次使用算起）；DeepSeek V4 Pro/Flash 各 50 万 Tokens"
+effect: "中国电信旗下全栈国产化智算平台，\"国模+国芯+国云\"融合底座，支持 GLM-5、DeepSeek-V4、Qwen3.5、Doubao-Seed-2.0-pro 等约 18 个主流大模型，适合政企/科研/个人开发者"
+link: "https://www.ctyun.cn/product/maas"
+updated: "2026-07-19"
+status: pending

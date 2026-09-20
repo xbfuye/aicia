@@ -1,0 +1,9 @@
+name: "GMI Cloud（gmi-serving）"
+type: "大模型"
+modality: "MiniMax-3M + GLM 智谱 + agens-2.5-flash · 文本模型（均免费）"
+rating: 5
+quota: "MiniMax-3M、GLM 智谱、agens-2.5-flash 当前全部免费调用（OpenAI 兼容接口，一个 Key 切多模型）"
+effect: "GMI Cloud 的 API 网关，主打免费模型：MiniMax-3M 日常对话、写文案够用，响应快；GLM 智谱中文理解稳，总结改写很顺手；agens-2.5-flash 同样免费可用，适合高频小任务与 Agent 调用"
+link: "https://console.gmicloud.ai"
+updated: "2026-08-27"
+status: pending
