@@ -249,6 +249,8 @@ function copyDir(srcDir, dstDir) {
   }
 }
 copyDir(publicDir, distDir);
+copyDir(join(root, 'admin'), join(distDir, 'admin'));
+copyFileSync(join(root, 'admin', 'index.html'), join(distDir, 'admin', 'index.html'));
 
 // SEO 文件
 writeFileSync(join(distDir, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE.url}sitemap.xml\n`);
